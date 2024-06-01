@@ -1,16 +1,15 @@
 package ittimfn.usemybatis.enums;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Properties;
 
 
 public enum PropertiesEnum {
-    DATABASE_PATH("database.path");
+    DATABASE_PATH("database.path"),
+    MYBATIS_ENVIRONMENT_ID("mybatis.environment.id");
 
     private static Properties properties;
 

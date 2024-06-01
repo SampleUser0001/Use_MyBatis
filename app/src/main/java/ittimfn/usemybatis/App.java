@@ -6,10 +6,13 @@ package ittimfn.usemybatis;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.apache.ibatis.javassist.tools.reflect.Sample;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import ittimfn.usemybatis.enums.PropertiesEnum;
+import ittimfn.usemybatis.model.SampleModel;
+import ittimfn.usemybatis.service.SampleService;
 
 public class App {
 
@@ -18,7 +21,9 @@ public class App {
     private static final String PROPERTIES_FILEPATH = Paths.get("application.properties").toString();
 
     public void exec(String[] args) {
-
+        SampleService service = new SampleService();
+        SampleModel result = service.selectById(1);
+        logger.info("result : {}", result);
     }
 
     public void load() throws Exception {
