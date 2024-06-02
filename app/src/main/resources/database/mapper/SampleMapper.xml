@@ -4,4 +4,13 @@
     <select id="selectById" parameterType="int" resultType="ittimfn.usemybatis.model.SampleModel">
         SELECT id, value FROM sample_table WHERE id = #{id}
     </select>
+    <select id="selectAll" resultType="ittimfn.usemybatis.model.SampleModel">
+        SELECT id, value FROM sample_table
+    </select>
+    <select id="selectInId" parameterType="java.util.List" resultType="ittimfn.usemybatis.model.SampleModel">
+        SELECT id, value FROM sample_table WHERE id IN
+        <foreach item="id" collection="list" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
 </mapper>

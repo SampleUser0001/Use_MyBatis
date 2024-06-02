@@ -3,15 +3,14 @@
  */
 package ittimfn.usemybatis;
 
+import java.util.List;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import org.apache.ibatis.javassist.tools.reflect.Sample;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import ittimfn.usemybatis.enums.PropertiesEnum;
-import ittimfn.usemybatis.model.SampleModel;
 import ittimfn.usemybatis.service.SampleService;
 
 public class App {
@@ -22,8 +21,9 @@ public class App {
 
     public void exec(String[] args) {
         SampleService service = new SampleService();
-        SampleModel result = service.selectById(1);
-        logger.info("result : {}", result);
+        service.selectById(1);
+        service.selectAll();
+        service.selectInId(List.of(1, 3));
     }
 
     public void load() throws Exception {
