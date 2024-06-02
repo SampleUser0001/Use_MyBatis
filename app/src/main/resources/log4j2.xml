@@ -51,6 +51,10 @@
             <AppenderRef ref="Test" />
         </Logger>
         -->
+        <Logger name="org" level="warn" additivity="false">
+            <AppenderRef ref="logfile001" />
+            <AppenderRef ref="Console" />
+        </Logger>
         <!-- 同一packageで出力先によってログレベルを変えたい場合は、AppenderRefにlevelをつける。
         <Logger name="ittimfn.sample" level="debug" additivity="false">
             <AppenderRef level="debug" ref="logfile001" />
